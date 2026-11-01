@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAN Ekran Yansıtıcı</title>
+    <!-- Stil dosyamızı bağlıyoruz -->
+    <link rel="stylesheet" href="style.css">
+    <!-- WebRTC bağlantısı için PeerJS -->
+    <script src="https://unpkg.com/peerjs@1.5.1/dist/peerjs.min.js"></script>
+</head>
+<body>
+
+    <div id="setupPanel" class="panel">
+        <h2>Cihaz Seçimi</h2>
+        <button onclick="startTVMode()">TV Modu (Alıcı)</button>
+        <button onclick="startPadMode()">Tablet Modu (Yayıncı)</button>
+    </div>
+
+    <div id="connectPanel" class="panel" style="display:none;">
+        <h2>Bağlantı Kur</h2>
+        <p>TV ekranındaki kodu buraya gir:</p>
+        <input type="text" id="tvCodeId" placeholder="Örn: tv-12345">
+        <button onclick="connectToTV()">Yayını Başlat</button>
+    </div>
+
+    <!-- TV tarafında görünecek tam ekran video -->
+    <video id="streamVideo" autoplay playsinline muted></video>
+    
+    <!-- Yayıncı (Tablet) tarafında arka planı uyanık tutacak gizli PiP videosu -->
+    <video id="localVideo" autoplay playsinline muted></video>
+
+    <!-- JavaScript dosyamızı bağlıyoruz -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+body { 
+    margin: 0; 
+    background: #121212; 
+    color: white; 
+    font-family: sans-serif; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh; 
+    overflow: hidden; 
+}
+
+video { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; 
+    display: none; 
+}
+
+.panel { 
+    padding: 20px; 
+    background: #1e1e1e; 
+    border-radius: 10px; 
+    border: 2px solid #8e44ad; 
+    text-align: center; 
+}
+
+input, button { 
+    padding: 10px; 
+    margin: 10px; 
+    font-size: 16px; 
+    border-radius: 5px; 
+    border: none; 
+}
+
+button { 
+    background: #8e44ad; 
+    color: white; 
+    cursor: pointer; 
+    font-weight: bold; 
+}
+
+/* Yayıncıda PiP için kullanılacak görünmez video yapılandırması */
+#localVideo { 
+    display: none; 
+    width: 1px; 
+    height: 1px; 
+}
